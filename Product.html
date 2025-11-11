@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LEUXE BEAUTY - Product</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fffbea;
+      text-align: center;
+      padding: 30px;
+      color: #111;
+    }
+    .product-box {
+      max-width: 400px;
+      background: white;
+      margin: auto;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .back-btn {
+      display: inline-block;
+      background: black;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 10px;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="product-box">
+    <img id="productImage" src="" alt="Product Image">
+    <h2 id="productName">Product Name</h2>
+    <p id="productDesc">Description</p>
+    <h3 id="productPrice">Price: Rs. ---</h3>
+    <a href="index.html" class="back-btn">⬅ Back</a>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const productName = params.get("name");
+    const products = JSON.parse(localStorage.getItem("products")) || [];
+    const product = products.find(p => p.name === productName);
+
+    if (product) {
+      document.getElementById("productName").innerText = product.name;
+      document.getElementById("productDesc").innerText = product.description;
+      document.getElementById("productPrice").innerText = "Price: Rs. " + product.price;
+      document.getElementById("productImage").src = product.image;
+    }
+  </script>
+</body>
+</html>
