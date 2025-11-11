@@ -7,216 +7,108 @@
   <style>
     body {
       font-family: "Poppins", sans-serif;
+      background-color: #fffbea;
       margin: 0;
-      background-color: #fff;
+      padding: 0;
       color: #111;
     }
-
     header {
-      background-color: #fff8e1;
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    header h1 {
-      color: #b8860b;
-      font-size: 26px;
+      background: black;
+      color: white;
+      padding: 15px 0;
+      text-align: center;
+      font-size: 1.8rem;
       letter-spacing: 2px;
     }
-
-    .search-bar input {
-      padding: 10px 15px;
-      width: 220px;
-      border: 1px solid #ccc;
-      border-radius: 30px;
-      font-size: 14px;
-      outline: none;
-    }
-
-    .product-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
-      padding: 40px;
-    }
-
-    .product {
-      background-color: #fff;
-      border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    .search-bar {
       text-align: center;
+      margin: 20px 0;
     }
-
+    input {
+      padding: 10px;
+      width: 60%;
+      border: 2px solid black;
+      border-radius: 10px;
+    }
+    .product-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+    .product {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      width: 250px;
+      text-align: center;
+      padding: 15px;
+      transition: transform 0.3s;
+    }
     .product:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      transform: scale(1.05);
     }
-
     .product img {
       width: 100%;
-      height: 240px;
+      height: 230px;
+      border-radius: 10px;
       object-fit: cover;
     }
-
-    .product h2 {
-      color: #b8860b;
-      margin: 15px 0 5px 0;
-      font-size: 18px;
+    .product h3 {
+      margin: 10px 0 5px;
+      color: #111;
     }
-
-    .product p {
-      font-size: 14px;
-      color: #555;
-      margin: 0 10px 10px 10px;
-    }
-
-    .price {
-      color: #000;
-      font-weight: bold;
-      font-size: 16px;
-      margin-bottom: 10px;
-    }
-
-    .btn {
+    .view-btn {
       display: inline-block;
-      background-color: #b8860b;
-      color: white;
-      padding: 8px 18px;
-      border-radius: 25px;
+      background: yellow;
+      color: black;
+      font-weight: bold;
       text-decoration: none;
-      margin-bottom: 15px;
-      transition: 0.3s ease;
-    }
-
-    .btn:hover {
-      background-color: #000;
-      color: #fff;
-    }
-
-    @media (max-width: 600px) {
-      header {
-        flex-direction: column;
-        gap: 10px;
-      }
-      .search-bar input {
-        width: 100%;
-      }
+      padding: 10px 15px;
+      border-radius: 10px;
+      margin-top: 8px;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>LEUXE BEAUTY</h1>
-    <div class="search-bar">
-      <input type="text" id="searchInput" placeholder="Search products..." onkeyup="searchProducts()" />
-    </div>
-  </header>
+  <header>💛 LEUXE BEAUTY 💛</header>
 
-  <div class="product-container" id="productContainer">
-    <!-- Product List -->
-    <div class="product" data-name="Face Cream">
-      <img src="https://cdn.pixabay.com/photo/2017/06/06/10/53/cream-2374063_1280.jpg" alt="Face Cream" />
-      <h2>Radiance Face Cream</h2>
-      <p>Brightens and nourishes your skin.</p>
-      <p class="price">Rs. 499</p>
-      <a href="#" class="btn">View Details</a>
-    </div>
+  <div class="search-bar">
+    <input type="text" id="searchBox" placeholder="Search your favorite product...">
+  </div>
 
-    <div class="product" data-name="Moisturizer">
-      <img src="https://cdn.pixabay.com/photo/2016/11/19/13/08/cream-1835704_1280.jpg" alt="Moisturizer" />
-      <h2>HydraGlow Moisturizer</h2>
-      <p>Hydrating formula for all skin types.</p>
-      <p class="price">Rs. 599</p>
-      <a href="#" class="btn">View Details</a>
-    </div>
-
-    <div class="product" data-name="Soap">
-      <img src="https://cdn.pixabay.com/photo/2017/08/06/09/53/soap-2591046_1280.jpg" alt="Soap" />
-      <h2>Floral Beauty Soap</h2>
-      <p>Gives soft and refreshed skin daily.</p>
-      <p class="price">Rs. 179</p>
-      <a href="#" class="btn">View Details</a>
-    </div>
-
-    <div class="product" data-name="Lipstick">
-      <img src="https://cdn.pixabay.com/photo/2015/12/08/00/26/lipstick-1081550_1280.jpg" alt="Lipstick" />
-      <h2>Velvet Matte Lipstick</h2>
-      <p>Long-lasting vibrant shades.</p>
-      <p class="price">Rs. 799</p>
-      <a href="#" class="btn">View Details</a>
-    </div>
-
-    <div class="product" data-name="Perfume">
-      <img src="https://cdn.pixabay.com/photo/2016/11/29/10/07/perfume-1869737_1280.jpg" alt="Perfume" />
-      <h2>Golden Bloom Perfume</h2>
-      <p>Signature luxury fragrance.</p>
-      <p class="price">Rs. 1299</p>
-      <a href="#" class="btn">View Details</a>
-    </div>
-
-    <div class="product" data-name="Foundation">
-      <img src="https://cdn.pixabay.com/photo/2016/03/27/19/32/makeup-1284254_1280.jpg" alt="Foundation" />
-      <h2>Silk Finish Foundation</h2>
-      <p>Full coverage with smooth texture.</p>
-      <p class="price">Rs. 999</p>
-      <a href="#" class="btn">View Details</a>
-    </div>
-
-    <div class="product" data-name="Eyeliner">
-      <img src="https://cdn.pixabay.com/photo/2016/11/21/15/52/eyeliner-1844452_1280.jpg" alt="Eyeliner" />
-      <h2>Precision Eyeliner</h2>
-      <p>Sharp and smooth finish every time.</p>
-      <p class="price">Rs. 499</p>
-      <a href="#" class="btn">View Details</a>
-    </div>
-
-    <div class="product" data-name="Shampoo">
-      <img src="https://cdn.pixabay.com/photo/2016/02/19/11/53/bottle-1205629_1280.jpg" alt="Shampoo" />
-      <h2>Silky Shine Shampoo</h2>
-      <p>For healthy, glossy hair.</p>
-      <p class="price">Rs. 449</p>
-      <a href="#" class="btn">View Details</a>
-    </div>
-
-    <div class="product" data-name="Nail Polish">
-      <img src="https://cdn.pixabay.com/photo/2014/08/11/23/41/nail-polish-416244_1280.jpg" alt="Nail Polish" />
-      <h2>Classic Nail Polish</h2>
-      <p>Glossy finish with rich color.</p>
-      <p class="price">Rs. 299</p>
-      <a href="#" class="btn">View Details</a>
-    </div>
-
-    <div class="product" data-name="Serum">
-      <img src="https://cdn.pixabay.com/photo/2019/09/11/20/25/serum-4473354_1280.jpg" alt="Serum" />
-      <h2>Glow Boost Serum</h2>
-      <p>Rejuvenates dull skin instantly.</p>
-      <p class="price">Rs. 799</p>
-      <a href="#" class="btn">View Details</a>
-    </div>
+  <div class="product-container" id="productList">
+    <!-- Products will appear here -->
   </div>
 
   <script>
-    function searchProducts() {
-      const input = document.getElementById("searchInput").value.toLowerCase();
-      const products = document.querySelectorAll(".product");
+    const products = JSON.parse(localStorage.getItem("products")) || [];
 
-      products.forEach((product) => {
-        const name = product.dataset.name.toLowerCase();
-        if (name.includes(input)) {
-          product.style.display = "block";
-        } else {
-          product.style.display = "none";
-        }
+    function displayProducts(list) {
+      const container = document.getElementById("productList");
+      container.innerHTML = "";
+
+      list.forEach((p) => {
+        container.innerHTML += `
+          <div class="product">
+            <img src="${p.image}" alt="${p.name}">
+            <h3>${p.name}</h3>
+            <p>${p.description}</p>
+            <p>Price: Rs. ${p.price}</p>
+            <a href="product.html?name=${encodeURIComponent(p.name)}" class="view-btn">View Details</a>
+          </div>
+        `;
       });
     }
+
+    displayProducts(products);
+
+    document.getElementById("searchBox").addEventListener("input", (e) => {
+      const value = e.target.value.toLowerCase();
+      const filtered = products.filter(p => p.name.toLowerCase().includes(value));
+      displayProducts(filtered);
+    });
   </script>
 </body>
 </html>
