@@ -3,23 +3,118 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Luxe Beauty</title>
+  <title>Luxe Beauty - Skincare Essentials</title>
   <style>
     body {
       font-family: 'Poppins', sans-serif;
+      background-color: #fff0f5;
+      margin: 0;
+      padding: 0;
       text-align: center;
-      background: #fff5f8;
-      color: #333;
-      padding: 60px;
     }
-    h1 {
-      color: #d63384;
-      font-size: 2em;
+    header {
+      background-color: #ff66b2;
+      color: white;
+      padding: 15px 0;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .banner {
+      background-image: linear-gradient(to right, #ff99cc, #ffcce6);
+      padding: 50px 10px;
+      color: #333;
+      font-size: 20px;
+      font-weight: 500;
+    }
+    .products {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 40px 0;
+    }
+    .product-card {
+      background-color: white;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 80%;
+      max-width: 350px;
+      margin: 15px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+    .product-card:hover {
+      transform: scale(1.03);
+    }
+    .product-card h3 {
+      color: #e91e63;
+    }
+    .product-card p {
+      color: #555;
+    }
+    .price {
+      font-weight: bold;
+      margin-top: 10px;
+      color: #000;
+    }
+    section {
+      padding: 40px 20px;
+    }
+    #about {
+      background-color: #ffe6f0;
+      border-radius: 15px;
+      margin: 20px;
+    }
+    #contact {
+      background-color: #fff5fa;
+      border-radius: 15px;
+      margin: 20px;
+    }
+    footer {
+      background-color: #ff66b2;
+      color: white;
+      padding: 10px 0;
+      margin-top: 30px;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
-  <h1>Welcome to Luxe Beauty 💄</h1>
-  <p>Elegance, Care & Confidence — your beauty journey starts here!</p>
-</body>
-</html>
+  <header>💋 Luxe Beauty</header>
+
+  <div class="banner">
+    Welcome to Luxe Beauty – Where Elegance Meets Skincare 💖  
+    Discover soft, glowing & healthy skin with our premium collection.
+  </div>
+
+  <section class="products">
+    <div class="product-card">
+      <h3>Face Cream</h3>
+      <p>Soft & glowing skin formula.</p>
+      <div class="price">Rs. 499</div>
+    </div>
+
+    <div class="product-card">
+      <h3>Beauty Soap</h3>
+      <p>Fresh feel with floral fragrance.</p>
+      <div class="price">Rs. 179</div>
+    </div>
+
+    <div class="product-card">
+      <h3>Moisturizer</h3>
+      <p>Hydrate your skin naturally.</p>
+      <div class="price">Rs. 599</div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Luxe Beauty</h2>
+    <p>
+      Luxe Beauty is a modern skincare brand designed to bring elegance and care to your beauty routine.
+      We focus on high-quality products that enhance your natural glow and boost your confidence every day.
+    </p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>📧 Email: contact@luxebeauty.com</p
