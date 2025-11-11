@@ -6,55 +6,72 @@
   <title>Luxe Beauty Admin</title>
   <style>
     body {
-      font-family: "Poppins", sans-serif;
-      background-color: #fff0f5;
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff5f8;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      margin: 0;
     }
+
     .login-box {
-      background: white;
+      background-color: #ffffff;
       padding: 30px;
       border-radius: 15px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
       text-align: center;
       width: 300px;
     }
+
+    h2 {
+      color: #e91e63;
+      margin-bottom: 20px;
+    }
+
     input {
-      width: 90%;
+      width: 100%;
       padding: 10px;
       margin: 10px 0;
-      border-radius: 8px;
       border: 1px solid #ccc;
+      border-radius: 8px;
     }
+
     button {
       background-color: #e91e63;
       color: white;
       border: none;
-      padding: 10px 20px;
+      padding: 10px 15px;
+      width: 100%;
       border-radius: 8px;
       cursor: pointer;
+      transition: 0.3s;
     }
-    h2 {
-      color: #e91e63;
+
+    button:hover {
+      background-color: #d81b60;
+    }
+
+    #message {
+      margin-top: 15px;
+      color: red;
     }
   </style>
 </head>
 <body>
+
   <div class="login-box">
     <h2>Admin Login</h2>
-    <input type="text" id="username" placeholder="Username" />
-    <input type="password" id="password" placeholder="Password" />
+    <input type="text" id="username" placeholder="Enter Username">
+    <input type="password" id="password" placeholder="Enter Password">
     <button onclick="login()">Login</button>
-    <p id="message" style="color:red;"></p>
+    <p id="message"></p>
   </div>
 
   <script>
     function login() {
       const user = document.getElementById('username').value;
       const pass = document.getElementById('password').value;
+
       if (user === 'Admin12' && pass === 'haiderHAIDER1') {
         window.location.href = 'dashboard.html';
       } else {
@@ -62,5 +79,6 @@
       }
     }
   </script>
+
 </body>
 </html>
