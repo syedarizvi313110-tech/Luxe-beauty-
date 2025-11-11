@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - Luxe Beauty</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff7fb;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #ff66b2;
+      color: white;
+      padding: 15px 0;
+      text-align: center;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+      margin: 40px auto;
+      max-width: 1000px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 280px;
+      text-align: center;
+      padding: 20px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    img {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    h3 {
+      color: #d63384;
+      margin: 15px 0 10px;
+    }
+
+    p {
+      color: #444;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-weight: bold;
+      color: #000;
+      font-size: 18px;
+    }
+
+    .logout {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .logout button {
+      background-color: #ff0080;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .logout button:hover {
+      background-color: #d6006e;
+    }
+  </style>
+</head>
+<body>
+
+  <header>💄 Luxe Beauty Admin Dashboard</header>
+
+  <div class="container">
+    <div class="card">
+      <img src="https://via.placeholder.com/250x200?text=Cream" alt="Cream">
+      <h3>Face Cream</h3>
+      <p>Soft & glowing skin formula.</p>
+      <p class="price">Rs. 499</p>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/250x200?text=Soap" alt="Soap">
+      <h3>Beauty Soap</h3>
+      <p>Fresh feel with floral fragrance.</p>
+      <p class="price">Rs. 179</p>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/250x200?text=Moisturizer" alt="Moisturizer">
+      <h3>Moisturizer</h3>
+      <p>Hydrate your skin naturally.</p>
+      <p class="price">Rs. 599</p>
+    </div>
+  </div>
+
+  <div class="logout">
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <script>
+    function logout() {
+      window.location.href = "admin.html";
+    }
+  </script>
+
+</body>
+</html>
