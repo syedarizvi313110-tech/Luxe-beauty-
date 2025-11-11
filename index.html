@@ -10,111 +10,54 @@
       background-color: #ffe6f2;
       margin: 0;
       padding: 0;
+      text-align: center;
     }
-
     header {
-      background: linear-gradient(90deg, #ff66b2, #ff99cc);
+      background: linear-gradient(90deg, #ff66b3, #ff3385);
       color: white;
-      text-align: center;
-      padding: 1.2rem;
-      font-size: 1.7rem;
+      padding: 15px;
+      font-size: 24px;
       font-weight: bold;
-      letter-spacing: 1px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
     }
-
     .intro {
-      text-align: center;
-      padding: 1.5rem;
-      font-size: 1.1rem;
+      padding: 20px;
+      font-size: 18px;
       color: #333;
-      line-height: 1.6;
     }
-
     .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      padding: 2rem;
-      max-width: 1000px;
-      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
     }
-
-    .product {
+    .product-card {
       background: white;
       border-radius: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 250px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       overflow: hidden;
-      transition: 0.3s ease;
+      transition: transform 0.3s;
     }
-
-    .product:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    .product-card:hover {
+      transform: scale(1.05);
     }
-
-    .product img {
+    .product-card img {
       width: 100%;
-      height: 230px;
+      height: 200px;
       object-fit: cover;
     }
-
-    .product-info {
-      padding: 1rem;
-      text-align: center;
+    .product-card h3 {
+      color: #ff3385;
+      margin: 10px 0 5px;
     }
-
-    .product-info h3 {
-      color: #ff4081;
-      margin-bottom: 0.5rem;
-    }
-
-    .product-info p {
+    .product-card p {
       color: #555;
-      margin: 0.3rem 0;
+      margin: 0 10px 10px;
     }
-
-    .product-info .price {
-      font-weight: bold;
-      color: #000;
-      margin-top: 0.5rem;
-    }
-  </style>
-</head>
-<body>
-  <header>💋 Luxe Beauty</header>
-
-  <div class="intro">
-    Welcome to <strong>Luxe Beauty</strong> – Where Elegance Meets Skincare 💖  
-    Discover soft, glowing & healthy skin with our premium collection.
-  </div>
-
-  <div class="products">
-    <div class="product">
-      <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c" alt="Face Cream">
-      <div class="product-info">
-        <h3>Face Cream</h3>
-        <p>Soft & glowing skin formula.</p>
-        <p class="price">Rs. 499</p>
-      </div>
-    </div>
-
-    <div class="product">
-      <img src="https://images.unsplash.com/photo-1629198735660-c0cfeaf8da1b" alt="Beauty Soap">
-      <div class="product-info">
-        <h3>Beauty Soap</h3>
-        <p>Fresh feel with floral fragrance.</p>
-        <p class="price">Rs. 179</p>
-      </div>
-    </div>
-
-    <div class="product">
-      <img src="https://images.unsplash.com/photo-1596464716121-9f8b6c8a8bdf" alt="Moisturizer">
-      <div class="product-info">
-        <h3>Moisturizer</h3>
-        <p>Hydrate your skin naturally.</p>
-        <p class="price">Rs. 599</p>
-      </div>
-    </div>
-  </div>
-</body>
-</html>
+    .price {
+      font-weight:
