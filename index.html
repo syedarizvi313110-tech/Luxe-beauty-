@@ -1,114 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LEUXE BEAUTY</title>
-  <style>
-    body {
-      font-family: "Poppins", sans-serif;
-      background-color: #fffbea;
-      margin: 0;
-      padding: 0;
-      color: #111;
-    }
-    header {
-      background: black;
-      color: white;
-      padding: 15px 0;
-      text-align: center;
-      font-size: 1.8rem;
-      letter-spacing: 2px;
-    }
-    .search-bar {
-      text-align: center;
-      margin: 20px 0;
-    }
-    input {
-      padding: 10px;
-      width: 60%;
-      border: 2px solid black;
-      border-radius: 10px;
-    }
-    .product-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      padding: 20px;
-    }
-    .product {
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      width: 250px;
-      text-align: center;
-      padding: 15px;
-      transition: transform 0.3s;
-    }
-    .product:hover {
-      transform: scale(1.05);
-    }
-    .product img {
-      width: 100%;
-      height: 230px;
-      border-radius: 10px;
-      object-fit: cover;
-    }
-    .product h3 {
-      margin: 10px 0 5px;
-      color: #111;
-    }
-    .view-btn {
-      display: inline-block;
-      background: yellow;
-      color: black;
-      font-weight: bold;
-      text-decoration: none;
-      padding: 10px 15px;
-      border-radius: 10px;
-      margin-top: 8px;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leuxe Beauty Store</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>💛 LEUXE BEAUTY 💛</header>
+  <header>
+    <h1>🖤 LEUXE BEAUTY 🖤</h1>
+    <input type="text" id="searchBox" placeholder="Search for products...">
+  </header>
 
-  <div class="search-bar">
-    <input type="text" id="searchBox" placeholder="Search your favorite product...">
-  </div>
+  <section class="products" id="productList"></section>
 
-  <div class="product-container" id="productList">
-    <!-- Products will appear here -->
-  </div>
-
-  <script>
-    const products = JSON.parse(localStorage.getItem("products")) || [];
-
-    function displayProducts(list) {
-      const container = document.getElementById("productList");
-      container.innerHTML = "";
-
-      list.forEach((p) => {
-        container.innerHTML += `
-          <div class="product">
-            <img src="${p.image}" alt="${p.name}">
-            <h3>${p.name}</h3>
-            <p>${p.description}</p>
-            <p>Price: Rs. ${p.price}</p>
-            <a href="product.html?name=${encodeURIComponent(p.name)}" class="view-btn">View Details</a>
-          </div>
-        `;
-      });
-    }
-
-    displayProducts(products);
-
-    document.getElementById("searchBox").addEventListener("input", (e) => {
-      const value = e.target.value.toLowerCase();
-      const filtered = products.filter(p => p.name.toLowerCase().includes(value));
-      displayProducts(filtered);
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
